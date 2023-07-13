@@ -1,3 +1,40 @@
 main {
   padding: 50px 0;
+
+  .banner {
+    @include center;
+    position: relative;
+    max-width: $max-desktop-width;
+    min-width: $min-mobile-width;
+    background: black;
+    margin: 0 auto;
+    height: 223px;
+    min-height: 111px;
+    border-radius: 25px;
+    background: url(/src/assets/img/homepage-background.png), no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 25px;
+      background-color: black;
+      opacity: 0.3;
+    }
+
+    p {
+      text-align: center;
+      position: relative;
+      font-family: $font-Montserrat;
+      color: $white;
+      font-size: 48px;
+      font-weight: 500;
+    }
+  }
 }

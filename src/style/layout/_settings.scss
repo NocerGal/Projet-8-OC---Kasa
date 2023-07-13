@@ -41,6 +41,12 @@ $mobile-width: 375px;
   justify-content: center;
 }
 
+@mixin center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 li {
   text-decoration: none;
   &:hover {
@@ -54,4 +60,16 @@ a {
 
 #Logo {
   cursor: pointer;
+}
+
+.card-logement {
+  width: 340px;
+  height: 340px;
+  background-color: $red-salmon;
+  border-radius: 10px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0) 0%,
+    $red-salmon 100%
+  );
 }
