@@ -1,9 +1,13 @@
 import React, { FunctionComponent, useState } from 'react';
 import Logements from '../assets/mock-location.json';
+import Logement_Presentation from '../components/logement-presentation';
+
 function FichesLogements() {
+  const [logements, setLogements] = useState(Logements);
+
   return (
     <main>
-      <h1>Fiches logement</h1>
+      <Logement_Presentation logements={logements} />
     </main>
   );
 }
