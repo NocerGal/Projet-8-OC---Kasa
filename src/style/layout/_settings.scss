@@ -1,0 +1,57 @@
+@font-face {
+  font-family: 'Montserrat';
+  src: url(/src/style/fonts/Montserrat/Montserrat-VariableFont_wght.ttf);
+}
+
+// colors for backgrounds and fonts
+$black: #000;
+$white: #ffffff;
+$grey: #f6f6f6;
+$red-salmon: #ff6060;
+
+// font-style
+$font-Montserrat: Montserrat, sans-serif;
+
+// size for logo
+$header-desktop-logo: 68px;
+$header-mobile-logo: 47px;
+$header-desktop-li: 24px;
+$header-mobile-li: 12px;
+$footer-logo: 40px;
+$footer-height: 209px;
+
+// whidth
+$max-desktop-width: 1240px;
+$min-mobile-width: 335px;
+
+// mobile width
+$mobile-width: 375px;
+
+// mixins
+@mixin header-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+li {
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+#Logo {
+  cursor: pointer;
+}

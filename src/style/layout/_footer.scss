@@ -1,0 +1,14 @@
+footer {
+  background-color: $black;
+  color: $white;
+  height: $footer-height;
+  @include footer;
+  font-family: $font-Montserrat;
+  padding: 66px 0 29px;
+
+  p {
+    margin-top: 29px;
+    font-size: 24px;
+    font-weight: 500;
+  }
+}

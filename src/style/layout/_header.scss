@@ -1,0 +1,32 @@
+header {
+  @include header-flex;
+  max-width: $max-desktop-width;
+  min-width: $min-mobile-width;
+  height: 68px;
+  margin: 45px auto;
+  padding: 0 20px;
+
+  img {
+    height: $header-desktop-logo;
+  }
+
+  nav {
+    margin: 17px 0;
+  }
+
+  nav ul {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+
+    li {
+      margin-left: 57px;
+      font-family: $font-Montserrat;
+      font-size: $header-desktop-li;
+      color: $red-salmon;
+      list-style: none;
+      cursor: pointer;
+      font-weight: 500;
+    }
+  }
+}
