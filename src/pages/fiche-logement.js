@@ -1,10 +1,10 @@
-import React from 'react';
-
+import React, { FunctionComponent, useState } from 'react';
+import Logements from '../assets/mock-location.json';
 function FichesLogements() {
   return (
-    <div>
+    <main>
       <h1>Fiches logement</h1>
-    </div>
+    </main>
   );
 }
 

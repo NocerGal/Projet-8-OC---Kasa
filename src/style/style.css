@@ -17,12 +17,45 @@ a {
   cursor: pointer;
 }
 
-.card-logement {
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 50px;
+  margin-top: 43px;
+}
+.card-container .card-logement {
+  cursor: pointer;
+  position: relative;
   width: 340px;
   height: 340px;
-  background-color: #ff6060;
   border-radius: 10px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #ff6060 100%);
+}
+.card-container .card-logement::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
+  border-radius: 10px;
+}
+.card-container .card-logement img {
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+}
+.card-container .card-logement span {
+  position: relative;
+  display: block;
+  width: 300px;
+  left: 20px;
+  bottom: 20%;
+  font-size: 18px;
+  font-family: Montserrat, sans-serif;
+  color: #ffffff;
+  font-weight: 500;
 }
 
 header {

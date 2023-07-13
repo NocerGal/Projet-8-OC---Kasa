@@ -5,7 +5,8 @@ function LogementsList(props) {
     <div className="card-container">
       {logements.map((logement) => (
         <div key={logement.id} className="card-logement">
-          <h2>{logement.title}</h2>
+          <img src={logement.cover} alt={logement.title} />
+          <span>{logement.title}</span>
         </div>
       ))}
     </div>
