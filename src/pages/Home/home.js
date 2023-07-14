@@ -10,9 +10,7 @@ export default function Home() {
       <div className="banner">
         <p>Chez vous, partout et ailleurs</p>
       </div>
-      <div className="card-container">
-        <Logement_Cards logements={logements} />
-      </div>
+      <Logement_Cards logements={logements} />
     </main>
   );
 }

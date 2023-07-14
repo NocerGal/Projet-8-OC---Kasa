@@ -25,7 +25,10 @@ export default function Routers() {
           <Route path="/" element={<Layout />}>
             <Route path="/" element={<Home />} />
             <Route path="/a-propos" element={<About_Us />} />
-            <Route path="/fiches-logements" element={<Fiches_Logements />} />
+            <Route
+              path="/fiches-logements/:id"
+              element={<Fiches_Logements />}
+            />
             <Route path="/page-not-found" element={<Page_Not_Found />} />
           </Route>
         </Routes>

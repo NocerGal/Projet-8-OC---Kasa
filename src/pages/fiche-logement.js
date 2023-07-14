@@ -5,11 +5,7 @@ import Logement_Presentation from '../components/logement-presentation';
 function FichesLogements() {
   const [logements, setLogements] = useState(Logements);
 
-  return (
-    <main>
-      <Logement_Presentation logements={logements} />
-    </main>
-  );
+  return <Logement_Presentation logements={logements} />;
 }
 
 export default FichesLogements;
