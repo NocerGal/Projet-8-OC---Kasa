@@ -1,11 +1,9 @@
 import { useState } from 'react';
 import Logements from '../assets/mock-location.json';
-import HousingPresentations from '../components/HousPresentations';
+import HousingPresentations from '../components/HousingPresentations';
 
 function FichesLogements() {
-  const [logements, setLogements] = useState(Logements);
-
-  return <HousingPresentations logements={logements} />;
+  return <HousingPresentations logements={Logements} />;
 }
 
 export default FichesLogements;

@@ -24,8 +24,3 @@ function LogementsCards(props) {
 }
 
 export default LogementsCards;
-
-// const history = useHistory();
-// const goToPokemon = (id: number) => {
-//   history.push(`/pokemons/${id}`);
-// };
