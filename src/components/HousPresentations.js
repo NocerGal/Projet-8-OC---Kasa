@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import LeftArrow from '../assets/icons/left-arrow.png';
 import RightArrow from '../assets/icons/right-arrow.png';
 import TopArrow from '../assets/icons/top-arrow.png';
+import PageNotFOund from '../pages/PageNotFound';
 
 function LogementPresentation(props) {
   const logements = props.logements;
@@ -16,10 +17,6 @@ function LogementPresentation(props) {
       }
     });
   }, []);
-
-  function testConsole() {
-    console.log(logement.host.name);
-  }
 
   return (
     <main>
@@ -77,7 +74,7 @@ function LogementPresentation(props) {
           </div>
         </>
       ) : (
-        <p>Chargement en cours...</p>
+        <PageNotFOund />
       )}
     </main>
   );

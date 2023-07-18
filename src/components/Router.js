@@ -1,5 +1,11 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route, Outlet } from 'react-router-dom';
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  Outlet,
+  Navigate,
+} from 'react-router-dom';
 import Header from './layouts/header';
 import Footer from './layouts/footer';
 import Home from '../pages/Home/home';
@@ -29,7 +35,7 @@ export default function Routers() {
               path="/fiches-logements/:id"
               element={<HousingPresentation />}
             />
-            <Route path="*" element={<PageNotFound />} />
+            <Route path="/*" element={<PageNotFound />} />
           </Route>
         </Routes>
       </BrowserRouter>
