@@ -268,7 +268,7 @@ footer p {
   font-weight: 500;
 }
 
-.caroussel {
+.carousel {
   position: relative;
   display: flex;
   max-width: 1240px;
@@ -276,14 +276,14 @@ footer p {
   margin: 0 auto;
   border-radius: 25px;
 }
-.caroussel img {
+.carousel img {
   border-radius: 25px;
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
-.caroussel img:nth-child(2),
-.caroussel img:nth-child(3) {
+.carousel img:nth-child(2),
+.carousel img:nth-child(3) {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -292,13 +292,13 @@ footer p {
   height: 79.2px;
   cursor: pointer;
 }
-.caroussel img:nth-child(2) {
+.carousel img:nth-child(2) {
   left: 23px;
 }
-.caroussel img:nth-child(3) {
+.carousel img:nth-child(3) {
   right: 23px;
 }
-.caroussel span:last-child {
+.carousel span:last-child {
   position: absolute;
   bottom: 25px;
   left: 50%;
