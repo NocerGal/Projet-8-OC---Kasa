@@ -117,6 +117,46 @@ li:hover {
   margin-right: 10px;
 }
 
+.colapse-nav {
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+}
+.colapse-nav .details-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ff6060;
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+.colapse-nav .details-title:hover + .text {
+  color: blue;
+  background-color: blue;
+  border: 1px solid blue;
+}
+.colapse-nav .details-title h3 {
+  margin: 0;
+}
+.colapse-nav .details-title img {
+  cursor: pointer;
+  transition: rotate 500ms;
+}
+.colapse-nav .details-title img:hover {
+  rotate: -0.5turn;
+}
+.colapse-nav .text {
+  background-color: #f6f6f6;
+  border-radius: 0 0 10px 10px;
+  padding: 25px 28px 20px 20px;
+  color: #ff6060;
+  font-family: Montserrat, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 28px;
+  flex: 1;
+}
+
 header {
   display: flex;
   justify-content: space-between;
@@ -149,7 +189,6 @@ header nav ul li {
 }
 
 main {
-  padding: 50px 0;
   height: 100%;
 }
 main .banner {
@@ -164,13 +203,10 @@ main .banner {
   height: 223px;
   min-height: 111px;
   border-radius: 25px;
-  background: url(/src/assets/img/homepage-background.png), no-repeat;
-  background-size: cover;
-  background-position: center;
+  margin-bottom: 38px;
 }
 main .banner::before {
   content: "";
-  display: block;
   position: absolute;
   left: 0;
   right: 0;
@@ -180,13 +216,25 @@ main .banner::before {
   background-color: black;
   opacity: 0.3;
 }
+main .banner img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 100%;
+  width: 100%;
+  border-radius: 25px;
+}
 main .banner p {
   text-align: center;
-  position: relative;
+  position: absolute;
   font-family: Montserrat, sans-serif;
   color: #ffffff;
   font-size: 48px;
   font-weight: 500;
+}
+
+.colapses-container {
+  max-width: 1240px;
+  margin: 0 auto;
 }
 
 footer {
@@ -301,29 +349,4 @@ footer p {
   display: flex;
   justify-content: space-between;
   width: 100%;
-}
-.description-equipements .details {
-  width: 582px;
-  margin-top: 24px;
-  display: flex;
-  flex-direction: column;
-}
-.description-equipements .details .details-title {
-  background-color: #ff6060;
-  padding: 10px 20px;
-  border-radius: 10px;
-}
-.description-equipements .details .details-title h3 {
-  margin: 0;
-}
-.description-equipements .details .text {
-  background-color: #f6f6f6;
-  border-radius: 0 0 10px 10px;
-  padding: 25px 28px 20px 20px;
-  color: #ff6060;
-  font-family: Montserrat, sans-serif;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 28px;
-  flex: 1;
 }/*# sourceMappingURL=style.css.map */

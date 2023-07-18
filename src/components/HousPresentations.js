@@ -1,7 +1,8 @@
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import LEFT_ARROW from '../assets/icons/left-arrow.png';
-import RIGHT_ARROW from '../assets/icons/right-arrow.png';
+import LeftArrow from '../assets/icons/left-arrow.png';
+import RightArrow from '../assets/icons/right-arrow.png';
+import TopArrow from '../assets/icons/top-arrow.png';
 
 function LogementPresentation(props) {
   const logements = props.logements;
@@ -26,8 +27,8 @@ function LogementPresentation(props) {
         <>
           <div className="caroussel">
             <img src={logement.pictures[0]} alt={logement.title} />
-            <img src={LEFT_ARROW} alt="left-arrow" />
-            <img src={RIGHT_ARROW} alt="right-arrow" />
+            <img src={LeftArrow} alt="left-arrow" />
+            <img src={RightArrow} alt="right-arrow" />
             <span>1/4</span>
           </div>
           <div className="descriptions">
@@ -52,15 +53,17 @@ function LogementPresentation(props) {
               <div>{logement.rating}</div>
             </div>
             <div className="description-equipements">
-              <div className="details">
+              <div className="colapse-nav">
                 <div className="details-title">
                   <h3>Description</h3>
+                  <img src={TopArrow} alt="top-arrow" />
                 </div>
                 <div className="text">{logement.description}</div>
               </div>
-              <div className="details">
+              <div className="colapse-nav">
                 <div className="details-title">
                   <h3>Équipements</h3>
+                  <img src={TopArrow} alt="top-arrow" />
                 </div>
                 <div className="text">
                   <ul>

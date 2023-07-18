@@ -1,5 +1,6 @@
-import React, { FunctionComponent, useState } from 'react';
-import Logement_Cards from '../../components/logement-card';
+import { useState } from 'react';
+import HousingCards from '../../components/HousingCards';
+import BackgroundBanner from '../../assets/img/homepage-background.png';
 import Logements from '../../assets/mock-location.json';
 
 export default function Home() {
@@ -8,9 +9,10 @@ export default function Home() {
   return (
     <main>
       <div className="banner">
+        <img src={BackgroundBanner} alt="image background banner" />
         <p>Chez vous, partout et ailleurs</p>
       </div>
-      <Logement_Cards logements={logements} />
+      <HousingCards logements={logements} />
     </main>
   );
 }

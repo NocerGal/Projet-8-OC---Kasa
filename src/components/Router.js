@@ -3,9 +3,9 @@ import { BrowserRouter, Routes, Route, Outlet } from 'react-router-dom';
 import Header from './layouts/header';
 import Footer from './layouts/footer';
 import Home from '../pages/Home/home';
-import About_Us from '../pages/about-us';
-import Fiches_Logements from '../pages/fiche-logement';
-import Page_Not_Found from '../pages/page-not-found';
+import AboutUs from '../pages/AboutUs';
+import HousingPresentation from '../pages/HousingPresentation';
+import PageNotFound from '../pages/PageNotFound';
 
 export default function Routers() {
   const Layout = () => {
@@ -24,12 +24,12 @@ export default function Routers() {
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route path="/" element={<Home />} />
-            <Route path="/a-propos" element={<About_Us />} />
+            <Route path="/a-propos" element={<AboutUs />} />
             <Route
               path="/fiches-logements/:id"
-              element={<Fiches_Logements />}
+              element={<HousingPresentation />}
             />
-            <Route path="/page-not-found" element={<Page_Not_Found />} />
+            <Route path="*" element={<PageNotFound />} />
           </Route>
         </Routes>
       </BrowserRouter>

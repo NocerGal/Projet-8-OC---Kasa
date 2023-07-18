@@ -1,4 +1,8 @@
-@import "./layout/settings";
-@import "./layout/header";
-@import "./layout/main";
-@import "./layout/footer";
+@import './layout/settings';
+@import './layout/header';
+@import './layout/main';
+@import './layout/footer';
+
+// Components styles
+
+@import './layout/style-components/fiche-logements.scss';
