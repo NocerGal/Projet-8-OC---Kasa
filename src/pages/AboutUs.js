@@ -1,24 +1,45 @@
 import BackgroundBanner from '../assets/img/a-propos-background.png';
 import TopArrow from '../assets/icons/top-arrow.png';
+import { useState } from 'react';
 
 function AboutUs() {
+  const [selected, setSelected] = useState(null);
+
+  const toggle = () => {
+    if (selected === 'selected') {
+      return setSelected(null);
+    }
+    setSelected('selected');
+  };
+
   return (
     <main>
       <div className="banner">
         <img src={BackgroundBanner} alt="image background banner" />
       </div>
       <div className="colapses-container">
-        <div className="colapse-nav">
-          <div className="details-title">
-            <h3>Fiabilité</h3>
-            <img src={TopArrow} alt="top-arrow" />
+        {
+          <div className="colapse-nav">
+            <div className="details-title" onClick={toggle}>
+              <h3>Fiabilité</h3>
+              <img
+                src={TopArrow}
+                alt="top-arrow"
+                className={
+                  selected === 'selected' ? 'bottom-arrow' : 'top-arrow'
+                }
+              />
+            </div>
+            <div
+              className={selected === 'selected' ? 'text display' : 'text hide'}
+            >
+              <p>
+                Les annonces postées sur Kasa garantissent une fiabilité totale.
+              </p>
+            </div>
           </div>
-          <div className="text">
-            Les annonces postées sur Kasa garantissent une fiabilité totale. Les
-            photos sont conformes aux logements, et toutes les informations sont
-            régulièrement vérifiées par nos équipes.
-          </div>
-        </div>
+        }
+
         <div className="colapse-nav">
           <div className="details-title">
             <h3>Respect</h3>

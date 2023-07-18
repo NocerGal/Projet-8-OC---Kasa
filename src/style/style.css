@@ -130,31 +130,45 @@ li:hover {
   padding: 10px 20px;
   border-radius: 10px;
 }
-.colapse-nav .details-title:hover + .text {
-  color: blue;
-  background-color: blue;
-  border: 1px solid blue;
-}
 .colapse-nav .details-title h3 {
   margin: 0;
 }
 .colapse-nav .details-title img {
-  cursor: pointer;
   transition: rotate 500ms;
+  cursor: pointer;
 }
-.colapse-nav .details-title img:hover {
+.colapse-nav .details-title .bottom-arrow {
   rotate: -0.5turn;
 }
 .colapse-nav .text {
-  background-color: #f6f6f6;
   border-radius: 0 0 10px 10px;
-  padding: 25px 28px 20px 20px;
   color: #ff6060;
   font-family: Montserrat, sans-serif;
   font-size: 18px;
   font-weight: 400;
   line-height: 28px;
+  padding-right: 28px;
+  padding-left: 20px;
+  overflow: hidden;
+  z-index: -99;
+}
+.colapse-nav .display {
+  background-color: #f6f6f6;
   flex: 1;
+  overflow: hidden;
+  padding: 25px 28px 20px 20px;
+  padding-top: 25px;
+  padding-bottom: 20px;
+  transition: padding-top 500ms, padding-bottom 500ms, transform 500ms;
+  overflow: hidden;
+  transform: translateY(0%);
+}
+.colapse-nav .hide {
+  padding-top: 0px;
+  padding-bottom: 0px;
+  overflow: hidden;
+  transition: padding-top 500ms, padding-bottom 500ms, transform 500ms;
+  transform: translateY(-100%);
 }
 
 header {
