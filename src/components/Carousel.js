@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useCarousel } from '../hooks/useCarousel';
+import PageNotFOund from '../pages/PageNotFound';
 import LeftArrow from '../assets/icons/left-arrow.png';
 import RightArrow from '../assets/icons/right-arrow.png';
 
@@ -35,7 +35,7 @@ function Carousel(props) {
           </span>
         </>
       ) : (
-        <p>ok</p>
+        <PageNotFOund />
       )}
     </div>
   );

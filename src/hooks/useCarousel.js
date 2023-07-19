@@ -11,8 +11,7 @@ export function useCarousel(logements, id) {
     );
     setLogement(logements[index]);
     setPicturesLength(logements[index].pictures.length);
-    setCurrentBanner(0);
-  }, [logements, id]);
+  }, []);
 
   function handleClick(i) {
     const nextBanner = (currentBanner + i + picsturesLength) % picsturesLength;
