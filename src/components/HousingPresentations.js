@@ -1,8 +1,9 @@
 import { useParams } from 'react-router-dom';
 import { useState, useEffect, useRef } from 'react';
-import TopArrow from '../assets/icons/top-arrow.png';
 import PageNotFOund from '../pages/PageNotFound';
 import Carousel from './Carousel';
+import Collapse from './Collapse';
+import Rating from './Rating';
 
 function HousingPresentations(props) {
   const logements = props.logements;
@@ -41,29 +42,14 @@ function HousingPresentations(props) {
                   </span>
                 ))}
               </div>
-              <div>{logement.rating}</div>
+              <Rating rating={logement.rating} />
             </div>
             <div className="description-equipements">
-              <div className="colapse-nav">
-                <div className="details-title">
-                  <h3>Description</h3>
-                  <img src={TopArrow} alt="top-arrow" />
-                </div>
-                <div className="text">{logement.description}</div>
-              </div>
-              <div className="colapse-nav">
-                <div className="details-title">
-                  <h3>Équipements</h3>
-                  <img src={TopArrow} alt="top-arrow" />
-                </div>
-                <div className="text">
-                  <ul>
-                    {logement.equipments.map((equipment) => (
-                      <li key={equipment}>{equipment}</li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
+              <Collapse
+                title="Description"
+                description={logement.description}
+              />
+              <Collapse title="Équipements" description={logement.equipments} />
             </div>
           </div>
         </>
