@@ -134,7 +134,7 @@ li:hover {
   margin: 0;
 }
 .colapse-nav .details-title img {
-  transition: rotate 500ms;
+  transition: rotate 370ms;
   cursor: pointer;
 }
 .colapse-nav .details-title .bottom-arrow {
@@ -156,19 +156,22 @@ li:hover {
   background-color: #f6f6f6;
   flex: 1;
   overflow: hidden;
-  padding: 25px 28px 20px 20px;
+  padding-right: 28px;
+  padding-left: 20px;
   padding-top: 25px;
   padding-bottom: 20px;
-  transition: padding-top 500ms, padding-bottom 500ms, transform 500ms;
+  transition: padding-top 100ms, padding-bottom 400ms, color 100ms, transform 500ms;
   overflow: hidden;
   transform: translateY(0%);
+  height: 0;
 }
 .colapse-nav .hide {
+  color: transparent;
   padding-top: 0px;
   padding-bottom: 0px;
   overflow: hidden;
-  transition: padding-top 500ms, padding-bottom 500ms, transform 500ms;
-  transform: translateY(-100%);
+  transition: padding-top 100ms, padding-bottom 400ms, color 100ms, transform 500ms;
+  transform: translateY(-25%);
 }
 
 header {
