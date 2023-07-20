@@ -4,6 +4,7 @@ footer {
   height: $footer-height;
   @include footer;
   font-family: $font-Montserrat;
+  text-align: center;
   padding: 66px 0 29px;
 
   p {

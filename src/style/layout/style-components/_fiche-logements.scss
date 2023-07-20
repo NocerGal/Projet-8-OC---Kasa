@@ -5,6 +5,12 @@
   height: 415px;
   margin: 0 auto;
   border-radius: 25px;
+  margin-bottom: 30px;
+
+  @media only screen and (max-width: $mobile-width) {
+    margin-bottom: 15px;
+    height: 255px;
+  }
 
   img {
     border-radius: 25px;
@@ -21,6 +27,11 @@
     width: 46.68px;
     height: 79.2px;
     cursor: pointer;
+
+    @media only screen and (max-width: $mobile-width) {
+      height: 24px;
+      width: 24px;
+    }
   }
 
   img:nth-child(2) {
@@ -42,63 +53,70 @@
 }
 
 .descriptions {
+  width: 100;
   display: flex;
-  flex-direction: column;
-  max-width: $max-desktop-width;
-  margin: 30px auto 50px;
-
-  .location-host {
-    display: flex;
-    justify-content: space-between;
-  }
-
-  .host {
-    display: flex;
-    justify-content: space-between;
-    max-width: 167px;
-    min-width: 135px;
-    height: 64px;
-
-    h2 {
-      margin: auto 0;
-      text-align: left;
-      vertical-align: middle;
-      padding-right: 7px;
-      width: 93px;
+  justify-content: space-between;
+  .location-tags {
+    margin-bottom: 24px;
+    .location {
+      margin-bottom: 20px;
+      h1,
+      h2 {
+        margin: 0;
+      }
+      h1 {
+        margin-bottom: 10px;
+      }
     }
-    img {
-      border-radius: 100px;
-      width: 64px;
-      height: 64px;
-    }
-  }
-  .location {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    height: 77px;
-
-    h1,
-    h2 {
-      margin: 0;
-    }
-  }
-
-  .tag-rating {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 10px;
-
     .tags {
       display: flex;
-      justify-content: space-between;
+    }
+  }
+  .host-rating {
+    display: flex;
+    flex-direction: column;
+
+    .host {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      h2 {
+        margin: 0 10px 0 0;
+        width: 100px;
+        text-align: right;
+      }
+      img {
+        width: 64px;
+        height: 64px;
+        border-radius: 100px;
+      }
+    }
+    .rating {
+      text-align: right;
+      margin-top: 21px;
     }
   }
 }
 
 .description-equipements {
   display: flex;
+  flex-wrap: wrap;
+  align-content: space-between;
   justify-content: space-between;
-  width: 100%;
+  height: 100%;
+
+  .colapse-nav {
+    flex-basis: $width-collapse;
+    min-width: $width-collapse;
+    @media only screen and (max-width: $mobile-width) {
+      margin-bottom: 20px;
+    }
+  }
+
+  @media (max-width: calc(($margin-border + $width-collapse)*2)) {
+    .colapse-nav {
+      flex-basis: 100%;
+      min-width: 100%;
+    }
+  }
 }

@@ -20,12 +20,17 @@ $header-mobile-li: 12px;
 $footer-logo: 40px;
 $footer-height: 209px;
 
+// margins
+$margin-border: 19px;
+
 // whidth
 $max-desktop-width: 1240px;
 $min-mobile-width: 335px;
+$width-collapse: 582px;
+$width-tag: 115px;
 
 // mobile width
-$mobile-width: 375px;
+$mobile-width: 564px;
 
 // mixins
 @mixin header-flex {
@@ -52,6 +57,9 @@ h1 {
   font-family: $font-Montserrat;
   color: $red-salmon;
   font-weight: 500;
+  @media only screen and (max-width: $mobile-width) {
+    font-size: 18px;
+  }
 }
 
 h2 {
@@ -59,6 +67,9 @@ h2 {
   font-family: $font-Montserrat;
   color: $red-salmon;
   font-weight: 500;
+  @media only screen and (max-width: $mobile-width) {
+    font-size: 14px;
+  }
 }
 
 h3 {
@@ -155,27 +166,32 @@ li {
   }
 }
 
+.tags {
+  height: 25px;
+}
 .tag {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include center;
   text-align: center;
-  background-color: $red-salmon;
-  width: 115px;
-  // height: 25px;
-  color: $white;
-  font-size: 14px;
   font-family: $font-Montserrat;
+  font-size: 14px;
   font-weight: 500;
+  color: $white;
+  background-color: $red-salmon;
   border-radius: 10px;
-  padding: 3px 0;
   margin-right: 10px;
+  width: $width-tag;
+  @media only screen and (max-width: $mobile-width) {
+    width: 84px;
+    font-size: 10px;
+    padding-top: 2px;
+  }
 }
 
 .colapse-nav {
   margin-bottom: 30px;
   display: flex;
   flex-direction: column;
+  height: 100%;
 
   .details-title {
     display: flex;
@@ -185,34 +201,51 @@ li {
     padding: 10px 20px;
     border-radius: 10px;
 
-    &:hover + .text {
-      color: blue;
-      background-color: blue;
-      border: 1px solid blue;
+    @media only screen and (max-width: $mobile-width) {
+      padding: 10px;
+      font-size: 13px;
     }
 
     h3 {
       margin: 0;
+      @media only screen and (max-width: $mobile-width) {
+        font-size: 13px;
+      }
     }
 
     img {
+      transition: rotate 370ms;
       cursor: pointer;
-      transition: rotate 500ms;
-      &:hover {
-        rotate: (-0.5turn);
-      }
+    }
+
+    .bottom-arrow {
+      rotate: (-0.5turn);
     }
   }
 
   .text {
-    background-color: $grey;
     border-radius: 0 0 10px 10px;
-    padding: 25px 28px 20px 20px;
     color: $red-salmon;
     font-family: $font-Montserrat;
+    background-color: $grey;
     font-size: 18px;
     font-weight: 400;
     line-height: 28px;
-    flex: 1;
+    padding-right: 28px;
+    padding-left: 20px;
+    overflow: hidden;
+    z-index: -99;
+    height: 100%;
+  }
+
+  .hide {
+    color: transparent;
+    max-height: 0;
+    transition: max-height 100ms ease-in;
+  }
+  .display {
+    max-height: 1000px;
+    transition: max-height 500ms ease-in;
+    flex-grow: 1;
   }
 }
