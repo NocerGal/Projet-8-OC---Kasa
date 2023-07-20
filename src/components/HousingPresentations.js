@@ -24,17 +24,11 @@ function HousingPresentations(props) {
         <>
           <Carousel logements={logements} />
           <div className="descriptions">
-            <div className="location-host">
+            <div className="location-tags">
               <div className="location">
                 <h1>{logement.title}</h1>
                 <h2>{logement.location}</h2>
               </div>
-              <div className="host">
-                <h2>{logement.host.name}</h2>
-                <img src={logement.host.picture} alt="host picture" />
-              </div>
-            </div>
-            <div className="tag-rating">
               <div className="tags">
                 {logement.tags.map((tag) => (
                   <span key={tag} className="tag">
@@ -42,15 +36,18 @@ function HousingPresentations(props) {
                   </span>
                 ))}
               </div>
+            </div>
+            <div className="host-rating">
+              <div className="host">
+                <h2>{logement.host.name}</h2>
+                <img src={logement.host.picture} alt="host picture" />
+              </div>
               <Rating rating={logement.rating} />
             </div>
-            <div className="description-equipements">
-              <Collapse
-                title="Description"
-                description={logement.description}
-              />
-              <Collapse title="Équipements" description={logement.equipments} />
-            </div>
+          </div>
+          <div className="description-equipements">
+            <Collapse title="Description" description={logement.description} />
+            <Collapse title="Équipements" description={logement.equipments} />
           </div>
         </>
       ) : (

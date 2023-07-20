@@ -8,12 +8,22 @@ h1 {
   color: #ff6060;
   font-weight: 500;
 }
+@media only screen and (max-width: 564px) {
+  h1 {
+    font-size: 18px;
+  }
+}
 
 h2 {
   font-size: 18px;
   font-family: Montserrat, sans-serif;
   color: #ff6060;
   font-weight: 500;
+}
+@media only screen and (max-width: 564px) {
+  h2 {
+    font-size: 14px;
+  }
 }
 
 h3 {
@@ -101,26 +111,37 @@ li:hover {
   font-weight: 500;
 }
 
+.tags {
+  height: 25px;
+}
+
 .tag {
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  background-color: #ff6060;
-  width: 115px;
-  color: #ffffff;
-  font-size: 14px;
   font-family: Montserrat, sans-serif;
+  font-size: 14px;
   font-weight: 500;
+  color: #ffffff;
+  background-color: #ff6060;
   border-radius: 10px;
-  padding: 3px 0;
   margin-right: 10px;
+  width: 115px;
+}
+@media only screen and (max-width: 564px) {
+  .tag {
+    width: 84px;
+    font-size: 10px;
+    padding-top: 2px;
+  }
 }
 
 .colapse-nav {
   margin-bottom: 30px;
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
 .colapse-nav .details-title {
   display: flex;
@@ -130,8 +151,19 @@ li:hover {
   padding: 10px 20px;
   border-radius: 10px;
 }
+@media only screen and (max-width: 564px) {
+  .colapse-nav .details-title {
+    padding: 10px;
+    font-size: 13px;
+  }
+}
 .colapse-nav .details-title h3 {
   margin: 0;
+}
+@media only screen and (max-width: 564px) {
+  .colapse-nav .details-title h3 {
+    font-size: 13px;
+  }
 }
 .colapse-nav .details-title img {
   transition: rotate 370ms;
@@ -144,6 +176,7 @@ li:hover {
   border-radius: 0 0 10px 10px;
   color: #ff6060;
   font-family: Montserrat, sans-serif;
+  background-color: #f6f6f6;
   font-size: 18px;
   font-weight: 400;
   line-height: 28px;
@@ -151,27 +184,17 @@ li:hover {
   padding-left: 20px;
   overflow: hidden;
   z-index: -99;
-}
-.colapse-nav .display {
-  background-color: #f6f6f6;
-  flex: 1;
-  overflow: hidden;
-  padding-right: 28px;
-  padding-left: 20px;
-  padding-top: 25px;
-  padding-bottom: 20px;
-  transition: padding-top 100ms, padding-bottom 400ms, color 100ms, transform 500ms;
-  overflow: hidden;
-  transform: translateY(0%);
-  height: 0;
+  height: 100%;
 }
 .colapse-nav .hide {
   color: transparent;
-  padding-top: 0px;
-  padding-bottom: 0px;
-  overflow: hidden;
-  transition: padding-top 100ms, padding-bottom 400ms, color 100ms, transform 500ms;
-  transform: translateY(-25%);
+  max-height: 0;
+  transition: max-height 100ms ease-in;
+}
+.colapse-nav .display {
+  max-height: 1000px;
+  transition: max-height 500ms ease-in;
+  flex-grow: 1;
 }
 
 header {
@@ -184,14 +207,27 @@ header {
   margin: 45px auto;
   padding: 0 20px;
 }
+@media only screen and (max-width: 564px) {
+  header {
+    margin: 20px 19px 19px;
+    padding: 0;
+  }
+}
 header img {
   height: 68px;
+}
+@media only screen and (max-width: 564px) {
+  header img {
+    width: 145px;
+    height: 47px;
+  }
 }
 header nav {
   margin: 17px 0;
 }
 header nav ul {
   display: flex;
+  align-items: center;
   flex-direction: row;
   margin: 0;
 }
@@ -204,9 +240,19 @@ header nav ul li {
   cursor: pointer;
   font-weight: 500;
 }
+header nav ul li:hover {
+  text-decoration: underline;
+}
+@media only screen and (max-width: 564px) {
+  header nav ul li {
+    font-size: 12px;
+    margin-left: 26px;
+  }
+}
 
 main {
   height: 100%;
+  margin: 0 19px;
 }
 main .banner {
   display: flex;
@@ -263,6 +309,7 @@ footer {
   align-items: center;
   justify-content: center;
   font-family: Montserrat, sans-serif;
+  text-align: center;
   padding: 66px 0 29px;
 }
 footer p {
@@ -278,6 +325,13 @@ footer p {
   height: 415px;
   margin: 0 auto;
   border-radius: 25px;
+  margin-bottom: 30px;
+}
+@media only screen and (max-width: 564px) {
+  .carousel {
+    margin-bottom: 15px;
+    height: 255px;
+  }
 }
 .carousel img {
   border-radius: 25px;
@@ -294,6 +348,13 @@ footer p {
   width: 46.68px;
   height: 79.2px;
   cursor: pointer;
+}
+@media only screen and (max-width: 564px) {
+  .carousel img:nth-child(2),
+  .carousel img:nth-child(3) {
+    height: 24px;
+    width: 24px;
+  }
 }
 .carousel img:nth-child(2) {
   left: 23px;
@@ -313,57 +374,69 @@ footer p {
 }
 
 .descriptions {
-  display: flex;
-  flex-direction: column;
-  max-width: 1240px;
-  margin: 30px auto 50px;
-}
-.descriptions .location-host {
+  width: 100;
   display: flex;
   justify-content: space-between;
 }
-.descriptions .host {
-  display: flex;
-  justify-content: space-between;
-  max-width: 167px;
-  min-width: 135px;
-  height: 64px;
+.descriptions .location-tags {
+  margin-bottom: 24px;
 }
-.descriptions .host h2 {
-  margin: auto 0;
-  text-align: left;
-  vertical-align: middle;
-  padding-right: 7px;
-  width: 93px;
+.descriptions .location-tags .location {
+  margin-bottom: 20px;
 }
-.descriptions .host img {
-  border-radius: 100px;
-  width: 64px;
-  height: 64px;
-}
-.descriptions .location {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  height: 77px;
-}
-.descriptions .location h1,
-.descriptions .location h2 {
+.descriptions .location-tags .location h1,
+.descriptions .location-tags .location h2 {
   margin: 0;
 }
-.descriptions .tag-rating {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 10px;
+.descriptions .location-tags .location h1 {
+  margin-bottom: 10px;
 }
-.descriptions .tag-rating .tags {
+.descriptions .location-tags .tags {
   display: flex;
-  justify-content: space-between;
+}
+.descriptions .host-rating {
+  display: flex;
+  flex-direction: column;
+}
+.descriptions .host-rating .host {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.descriptions .host-rating .host h2 {
+  margin: 0 10px 0 0;
+  width: 100px;
+  text-align: right;
+}
+.descriptions .host-rating .host img {
+  width: 64px;
+  height: 64px;
+  border-radius: 100px;
+}
+.descriptions .host-rating .rating {
+  text-align: right;
+  margin-top: 21px;
 }
 
 .description-equipements {
   display: flex;
+  flex-wrap: wrap;
+  align-content: space-between;
   justify-content: space-between;
-  width: 100%;
+  height: 100%;
+}
+.description-equipements .colapse-nav {
+  flex-basis: 582px;
+  min-width: 582px;
+}
+@media only screen and (max-width: 564px) {
+  .description-equipements .colapse-nav {
+    margin-bottom: 20px;
+  }
+}
+@media (max-width: 1202px) {
+  .description-equipements .colapse-nav {
+    flex-basis: 100%;
+    min-width: 100%;
+  }
 }/*# sourceMappingURL=style.css.map */
