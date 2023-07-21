@@ -13,6 +13,14 @@ export function useCarousel(logements, id) {
     setPicturesLength(logements[index].pictures.length);
   }, []);
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const nextBanner =
+        (currentBanner + 1 + picsturesLength) % picsturesLength;
+      setCurrentBanner(nextBanner);
+    }, 2500);
+    return () => clearInterval(interval);
+  }, [currentBanner]);
   function handleClick(i) {
     const nextBanner = (currentBanner + i + picsturesLength) % picsturesLength;
     setCurrentBanner(nextBanner);
