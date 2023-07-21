@@ -22,7 +22,7 @@ h2 {
 }
 @media only screen and (max-width: 564px) {
   h2 {
-    font-size: 14px;
+    font-size: 12px;
   }
 }
 
@@ -73,6 +73,15 @@ li:hover {
   background-color: #f6f6f6;
   border-radius: 25px;
 }
+@media only screen and (max-width: 564px) {
+  .card-container {
+    background: #ffffff;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 27px;
+    gap: 20px;
+  }
+}
 .card-container .card-logement {
   cursor: pointer;
   position: relative;
@@ -112,13 +121,14 @@ li:hover {
 }
 
 .tags {
-  height: 25px;
+  min-height: 25px;
 }
 
 .tag {
   display: flex;
   align-items: center;
   justify-content: center;
+  min-height: 25px;
   text-align: center;
   font-family: Montserrat, sans-serif;
   font-size: 14px;
@@ -126,12 +136,13 @@ li:hover {
   color: #ffffff;
   background-color: #ff6060;
   border-radius: 10px;
-  margin-right: 10px;
-  width: 115px;
+  min-width: 85px;
+  padding: 0 15px;
 }
 @media only screen and (max-width: 564px) {
   .tag {
-    width: 84px;
+    min-width: 84px;
+    min-height: 18px;
     font-size: 10px;
     padding-top: 2px;
   }
@@ -143,18 +154,24 @@ li:hover {
   flex-direction: column;
   height: 100%;
 }
+@media only screen and (max-width: 564px) {
+  .colapse-nav {
+    margin-bottom: 20px;
+  }
+}
 .colapse-nav .details-title {
   display: flex;
   align-items: center;
   justify-content: space-between;
   background-color: #ff6060;
   padding: 10px 20px;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 @media only screen and (max-width: 564px) {
   .colapse-nav .details-title {
-    padding: 10px;
+    padding: 0 10px;
     font-size: 13px;
+    height: 30px;
   }
 }
 .colapse-nav .details-title h3 {
@@ -168,6 +185,12 @@ li:hover {
 .colapse-nav .details-title img {
   transition: rotate 370ms;
   cursor: pointer;
+}
+@media only screen and (max-width: 564px) {
+  .colapse-nav .details-title img {
+    height: 24px;
+    width: 24px;
+  }
 }
 .colapse-nav .details-title .bottom-arrow {
   rotate: -0.5turn;
@@ -185,6 +208,11 @@ li:hover {
   overflow: hidden;
   z-index: -99;
   height: 100%;
+}
+@media only screen and (max-width: 564px) {
+  .colapse-nav .text {
+    font-size: 12px;
+  }
 }
 .colapse-nav .hide {
   color: transparent;
@@ -247,6 +275,7 @@ header nav ul li:hover {
   header nav ul li {
     font-size: 12px;
     margin-left: 26px;
+    text-transform: uppercase;
   }
 }
 
@@ -267,6 +296,11 @@ main .banner {
   min-height: 111px;
   border-radius: 25px;
   margin-bottom: 38px;
+}
+@media only screen and (max-width: 564px) {
+  main .banner {
+    margin-bottom: 22px;
+  }
 }
 main .banner::before {
   content: "";
@@ -304,18 +338,38 @@ footer {
   background-color: #000;
   color: #ffffff;
   height: 209px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   font-family: Montserrat, sans-serif;
   text-align: center;
-  padding: 66px 0 29px;
+  padding: 68px 0 29px;
+  height: 114px;
+}
+@media only screen and (max-width: 564px) {
+  footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    padding: 0 0 58px;
+    min-height: 209px;
+  }
+  footer a {
+    height: 39px;
+  }
 }
 footer p {
+  margin: 0;
   margin-top: 29px;
   font-size: 24px;
   font-weight: 500;
+}
+@media only screen and (max-width: 564px) {
+  footer p {
+    font-size: 12px;
+    margin-top: 16px;
+    width: 133px;
+    line-height: 20px;
+  }
 }
 
 .carousel {
@@ -374,12 +428,23 @@ footer p {
 }
 
 .descriptions {
-  width: 100;
+  max-width: 1240px;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
 }
+@media only screen and (max-width: 564px) {
+  .descriptions {
+    flex-direction: column;
+  }
+}
 .descriptions .location-tags {
   margin-bottom: 24px;
+}
+@media only screen and (max-width: 564px) {
+  .descriptions .location-tags {
+    margin-bottom: 8px;
+  }
 }
 .descriptions .location-tags .location {
   margin-bottom: 20px;
@@ -393,10 +458,20 @@ footer p {
 }
 .descriptions .location-tags .tags {
   display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 .descriptions .host-rating {
   display: flex;
   flex-direction: column;
+}
+@media only screen and (max-width: 564px) {
+  .descriptions .host-rating {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 20px;
+  }
 }
 .descriptions .host-rating .host {
   display: flex;
@@ -408,17 +483,36 @@ footer p {
   width: 100px;
   text-align: right;
 }
+@media only screen and (max-width: 564px) {
+  .descriptions .host-rating .host h2 {
+    width: 50px;
+  }
+}
 .descriptions .host-rating .host img {
   width: 64px;
   height: 64px;
   border-radius: 100px;
 }
+@media only screen and (max-width: 564px) {
+  .descriptions .host-rating .host img {
+    height: 32px;
+    width: 32px;
+  }
+}
 .descriptions .host-rating .rating {
   text-align: right;
   margin-top: 21px;
 }
+@media only screen and (max-width: 564px) {
+  .descriptions .host-rating .rating img {
+    height: 18px;
+    width: 18px;
+  }
+}
 
 .description-equipements {
+  max-width: 1240px;
+  margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
   align-content: space-between;
@@ -432,6 +526,15 @@ footer p {
 @media only screen and (max-width: 564px) {
   .description-equipements .colapse-nav {
     margin-bottom: 20px;
+  }
+}
+@media only screen and (max-width: 564px) {
+  .description-equipements .colapse-nav .details-title {
+    padding: 3px 10px;
+  }
+  .description-equipements .colapse-nav .details-title img {
+    height: 24px;
+    width: 24px;
   }
 }
 @media (max-width: 1202px) {
