@@ -2,14 +2,31 @@ footer {
   background-color: $black;
   color: $white;
   height: $footer-height;
-  @include footer;
   font-family: $font-Montserrat;
   text-align: center;
-  padding: 66px 0 29px;
+  padding: 68px 0 29px;
+  height: 114px;
+  @media only screen and (max-width: $mobile-width) {
+    @include footer;
+    padding: 0;
+    padding: 0 0 58px;
+    min-height: 209px;
+
+    a {
+      height: 39px;
+    }
+  }
 
   p {
+    margin: 0;
     margin-top: 29px;
     font-size: 24px;
     font-weight: 500;
+    @media only screen and (max-width: $mobile-width) {
+      font-size: 12px;
+      margin-top: 16px;
+      width: 133px;
+      line-height: 20px;
+    }
   }
 }

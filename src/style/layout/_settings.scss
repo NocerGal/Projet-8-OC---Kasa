@@ -27,7 +27,7 @@ $margin-border: 19px;
 $max-desktop-width: 1240px;
 $min-mobile-width: 335px;
 $width-collapse: 582px;
-$width-tag: 115px;
+$width-tag: 85px;
 
 // mobile width
 $mobile-width: 564px;
@@ -68,7 +68,7 @@ h2 {
   color: $red-salmon;
   font-weight: 500;
   @media only screen and (max-width: $mobile-width) {
-    font-size: 14px;
+    font-size: 12px;
   }
 }
 
@@ -120,6 +120,14 @@ li {
   background-color: $grey;
   border-radius: 25px;
 
+  @media only screen and (max-width: $mobile-width) {
+    background: $white;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 27px;
+    gap: 20px;
+  }
+
   .card-logement {
     cursor: pointer;
     position: relative;
@@ -167,10 +175,11 @@ li {
 }
 
 .tags {
-  height: 25px;
+  min-height: 25px;
 }
 .tag {
   @include center;
+  min-height: 25px;
   text-align: center;
   font-family: $font-Montserrat;
   font-size: 14px;
@@ -178,10 +187,11 @@ li {
   color: $white;
   background-color: $red-salmon;
   border-radius: 10px;
-  margin-right: 10px;
-  width: $width-tag;
+  min-width: $width-tag;
+  padding: 0 15px;
   @media only screen and (max-width: $mobile-width) {
-    width: 84px;
+    min-width: 84px;
+    min-height: 18px;
     font-size: 10px;
     padding-top: 2px;
   }
@@ -192,6 +202,9 @@ li {
   display: flex;
   flex-direction: column;
   height: 100%;
+  @media only screen and (max-width: $mobile-width) {
+    margin-bottom: 20px;
+  }
 
   .details-title {
     display: flex;
@@ -199,11 +212,12 @@ li {
     justify-content: space-between;
     background-color: $red-salmon;
     padding: 10px 20px;
-    border-radius: 10px;
+    border-radius: 5px;
 
     @media only screen and (max-width: $mobile-width) {
-      padding: 10px;
+      padding: 0 10px;
       font-size: 13px;
+      height: 30px;
     }
 
     h3 {
@@ -216,6 +230,11 @@ li {
     img {
       transition: rotate 370ms;
       cursor: pointer;
+
+      @media only screen and (max-width: $mobile-width) {
+        height: 24px;
+        width: 24px;
+      }
     }
 
     .bottom-arrow {
@@ -236,6 +255,10 @@ li {
     overflow: hidden;
     z-index: -99;
     height: 100%;
+
+    @media only screen and (max-width: $mobile-width) {
+      font-size: 12px;
+    }
   }
 
   .hide {
