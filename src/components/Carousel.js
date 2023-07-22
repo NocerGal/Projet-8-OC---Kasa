@@ -12,6 +12,7 @@ function handleClick(i) {
 
 function Carousel(props) {
   const logements = props.logements;
+  const maxwidth = props.maxwidth;
   const { id } = useParams();
   const { logement, picturesLength, currentBanner } = useCarousel(
     logements,
@@ -23,8 +24,8 @@ function Carousel(props) {
     width: `${1240}px`,
   });
   const widthRegardingLength = (childs) => ({
-    width: `${childs * 1240}px`,
-    transform: `translateX(${-(currentBanner * 1240)}px)`,
+    width: `${childs * maxwidth}px`,
+    transform: `translateX(${-(currentBanner * maxwidth)}px)`,
   });
 
   return (

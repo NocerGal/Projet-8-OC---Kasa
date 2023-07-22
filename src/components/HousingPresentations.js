@@ -7,6 +7,7 @@ import Rating from './Rating';
 
 function HousingPresentations(props) {
   const logements = props.logements;
+  const maxwidth = props.maxwidth;
   const { id } = useParams();
 
   const [logement, setLogement] = useState(null);
@@ -22,7 +23,7 @@ function HousingPresentations(props) {
     <main>
       {logement ? (
         <>
-          <Carousel logements={logements} />
+          <Carousel logements={logements} maxwidth={maxwidth} />
           <div className="descriptions">
             <div className="location-tags">
               <div className="location">
