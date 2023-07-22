@@ -380,6 +380,8 @@ footer p {
   margin: 0 auto;
   border-radius: 25px;
   margin-bottom: 30px;
+  transition: all 1000ms ease-in-out;
+  overflow: hidden;
 }
 @media only screen and (max-width: 564px) {
   .carousel {
@@ -387,14 +389,42 @@ footer p {
     height: 255px;
   }
 }
+.carousel .banners {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  transition: transform ease-in-out 0.8s;
+}
+.carousel .banners .banner {
+  width: 100%;
+  height: 100%;
+  margin-bottom: 0;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
 .carousel img {
   border-radius: 25px;
   width: 100%;
+  height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
-.carousel img:nth-child(2),
-.carousel img:nth-child(3) {
+.carousel .previous {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateX(-100%);
+  overflow: hidden;
+  transition: all 1000ms;
+}
+.carousel .current {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateX(0);
+}
+.carousel .arrow {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -404,16 +434,15 @@ footer p {
   cursor: pointer;
 }
 @media only screen and (max-width: 564px) {
-  .carousel img:nth-child(2),
-  .carousel img:nth-child(3) {
+  .carousel .arrow {
     height: 24px;
     width: 24px;
   }
 }
-.carousel img:nth-child(2) {
+.carousel .left {
   left: 23px;
 }
-.carousel img:nth-child(3) {
+.carousel .right {
   right: 23px;
 }
 .carousel span:last-child {

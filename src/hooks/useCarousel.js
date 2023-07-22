@@ -1,8 +1,9 @@
+// useCarousel.js
 import { useState, useEffect } from 'react';
 
 export function useCarousel(logements, id) {
   const [logement, setLogement] = useState(null);
-  const [picsturesLength, setPicturesLength] = useState(0);
+  const [picturesLength, setPicturesLength] = useState(0);
   const [currentBanner, setCurrentBanner] = useState(0);
 
   useEffect(() => {
@@ -15,21 +16,15 @@ export function useCarousel(logements, id) {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      const nextBanner =
-        (currentBanner + 1 + picsturesLength) % picsturesLength;
+      const nextBanner = (currentBanner + 1) % picturesLength;
       setCurrentBanner(nextBanner);
-    }, 2500);
+    }, 4000);
     return () => clearInterval(interval);
-  }, [currentBanner]);
-  function handleClick(i) {
-    const nextBanner = (currentBanner + i + picsturesLength) % picsturesLength;
-    setCurrentBanner(nextBanner);
-  }
+  }, [currentBanner, picturesLength]);
 
   return {
     logement,
-    picsturesLength,
+    picturesLength,
     currentBanner,
-    handleClick,
   };
 }

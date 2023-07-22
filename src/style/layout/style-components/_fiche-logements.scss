@@ -6,20 +6,51 @@
   margin: 0 auto;
   border-radius: 25px;
   margin-bottom: 30px;
+  transition: all 1000ms ease-in-out;
+  overflow: hidden;
 
   @media only screen and (max-width: $mobile-width) {
     margin-bottom: 15px;
     height: 255px;
   }
+  .banners {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    transition: transform ease-in-out 0.8s;
+
+    .banner {
+      width: 100%;
+      height: 100%;
+      margin-bottom: 0;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+  }
 
   img {
     border-radius: 25px;
     width: 100%;
+    height: 100%;
     object-fit: cover;
   }
 
-  img:nth-child(2),
-  img:nth-child(3) {
+  .previous {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateX(-100%);
+    overflow: hidden;
+    transition: all 1000ms;
+  }
+  .current {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateX(0);
+  }
+  .arrow {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -34,10 +65,10 @@
     }
   }
 
-  img:nth-child(2) {
+  .left {
     left: 23px;
   }
-  img:nth-child(3) {
+  .right {
     right: 23px;
   }
   span:last-child {
@@ -53,11 +84,18 @@
 }
 
 .descriptions {
-  width: 100;
+  max-width: $max-desktop-width;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
+  @media only screen and (max-width: $mobile-width) {
+    flex-direction: column;
+  }
   .location-tags {
     margin-bottom: 24px;
+    @media only screen and (max-width: $mobile-width) {
+      margin-bottom: 8px;
+    }
     .location {
       margin-bottom: 20px;
       h1,
@@ -70,11 +108,19 @@
     }
     .tags {
       display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
     }
   }
   .host-rating {
     display: flex;
     flex-direction: column;
+    @media only screen and (max-width: $mobile-width) {
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 20px;
+    }
 
     .host {
       display: flex;
@@ -84,21 +130,37 @@
         margin: 0 10px 0 0;
         width: 100px;
         text-align: right;
+        @media only screen and (max-width: $mobile-width) {
+          width: 50px;
+        }
       }
       img {
         width: 64px;
         height: 64px;
         border-radius: 100px;
+        @media only screen and (max-width: $mobile-width) {
+          height: 32px;
+          width: 32px;
+        }
       }
     }
     .rating {
       text-align: right;
       margin-top: 21px;
+
+      img {
+        @media only screen and (max-width: $mobile-width) {
+          height: 18px;
+          width: 18px;
+        }
+      }
     }
   }
 }
 
 .description-equipements {
+  max-width: $max-desktop-width;
+  margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
   align-content: space-between;
@@ -110,6 +172,17 @@
     min-width: $width-collapse;
     @media only screen and (max-width: $mobile-width) {
       margin-bottom: 20px;
+    }
+
+    .details-title {
+      @media only screen and (max-width: $mobile-width) {
+        padding: 3px 10px;
+
+        img {
+          height: 24px;
+          width: 24px;
+        }
+      }
     }
   }
 
