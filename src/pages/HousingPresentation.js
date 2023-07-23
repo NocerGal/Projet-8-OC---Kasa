@@ -1,8 +1,8 @@
-import Logements from '../assets/mock-location.json';
+import Housings from '../assets/mock-location.json';
 import HousingPresentations from '../components/HousingPresentations';
 
-function FichesLogements() {
-  return <HousingPresentations logements={Logements} maxwidth={1240} />;
+function FichesHousings() {
+  return <HousingPresentations housings={Housings} maxwidth={1240} />;
 }
 
-export default FichesLogements;
+export default FichesHousings;

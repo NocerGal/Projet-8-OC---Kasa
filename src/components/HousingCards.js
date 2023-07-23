@@ -1,26 +1,26 @@
 import { useNavigate } from 'react-router-dom';
 
-function LogementsCards(props) {
-  const logements = props.logements;
+function HousingsCards(props) {
+  const housings = props.housings;
   const navigate = useNavigate();
-  const goToLogement = (id) => {
+  const goToHousing = (id) => {
     navigate(`/fiches-logements/${id}`);
   };
 
   return (
     <div className="card-container">
-      {logements.map((logement) => (
+      {housings.map((housing) => (
         <div
-          key={logement.id}
-          className="card-logement"
-          onClick={() => goToLogement(logement.id)}
+          key={housing.id}
+          className="card-housing"
+          onClick={() => goToHousing(housing.id)}
         >
-          <img src={logement.cover} alt={logement.title} />
-          <span>{logement.title}</span>
+          <img src={housing.cover} alt={housing.title} />
+          <span>{housing.title}</span>
         </div>
       ))}
     </div>
   );
 }
 
-export default LogementsCards;
+export default HousingsCards;

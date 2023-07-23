@@ -1,37 +1,37 @@
 import { useParams } from 'react-router-dom';
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import PageNotFOund from '../pages/PageNotFound';
-import Carousel from './Carousel';
+import Carousel from './Gallery';
 import Collapse from './Collapse';
 import Rating from './Rating';
 
 function HousingPresentations(props) {
-  const logements = props.logements;
+  const housings = props.housings;
   const maxwidth = props.maxwidth;
   const { id } = useParams();
 
-  const [logement, setLogement] = useState(null);
+  const [housing, setHousing] = useState(null);
   useEffect(function () {
-    logements.forEach((logement) => {
-      if (logement.id === id.toString()) {
-        setLogement(logement);
+    housings.forEach((housing) => {
+      if (housing.id === id.toString()) {
+        setHousing(housing);
       }
     });
   }, []);
 
   return (
     <main>
-      {logement ? (
+      {housing ? (
         <>
-          <Carousel logements={logements} maxwidth={maxwidth} />
+          <Carousel housings={housings} maxwidth={maxwidth} />
           <div className="descriptions">
             <div className="location-tags">
               <div className="location">
-                <h1>{logement.title}</h1>
-                <h2>{logement.location}</h2>
+                <h1>{housing.title}</h1>
+                <h2>{housing.location}</h2>
               </div>
               <div className="tags">
-                {logement.tags.map((tag) => (
+                {housing.tags.map((tag) => (
                   <span key={tag} className="tag">
                     {tag}
                   </span>
@@ -40,15 +40,15 @@ function HousingPresentations(props) {
             </div>
             <div className="host-rating">
               <div className="host">
-                <h2>{logement.host.name}</h2>
-                <img src={logement.host.picture} alt="host picture" />
+                <h2>{housing.host.name}</h2>
+                <img src={housing.host.picture} alt="host picture" />
               </div>
-              <Rating rating={logement.rating} />
+              <Rating rating={housing.rating} />
             </div>
           </div>
           <div className="description-equipements">
-            <Collapse title="Description" description={logement.description} />
-            <Collapse title="Équipements" description={logement.equipments} />
+            <Collapse title="Description" description={housing.description} />
+            <Collapse title="Équipements" description={housing.equipments} />
           </div>
         </>
       ) : (
