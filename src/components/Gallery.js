@@ -1,22 +1,39 @@
-// Carousel.jsx
 import { useParams } from 'react-router-dom';
-import { useCarousel } from '../hooks/useCarousel';
+import { useState, useEffect } from 'react';
 import PageNotFound from '../pages/PageNotFound';
 import LeftArrow from '../assets/icons/left-arrow.png';
 import RightArrow from '../assets/icons/right-arrow.png';
 
-function Carousel(props) {
-  const logements = props.logements;
+function Gallery(props) {
+  const housings = props.housings;
   const maxwidth = props.maxwidth;
   const { id } = useParams();
-  const { logement, picturesLength, currentBanner, handleClick } = useCarousel(
-    logements,
-    id
-  );
+  const [housing, setHousing] = useState(null);
+  const [picturesLength, setPicturesLength] = useState(0);
+  const [currentBanner, setCurrentBanner] = useState(0);
+
+  useEffect(() => {
+    const index = housings.findIndex((housing) => housing.id === id.toString());
+    setHousing(housings[index]);
+    setPicturesLength(housings[index].pictures.length);
+  }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const nextBanner = (currentBanner + 1) % picturesLength;
+      setCurrentBanner(nextBanner);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, [currentBanner, picturesLength]);
+
+  function handleClick(i) {
+    const nextBanner = (currentBanner + i + picturesLength) % picturesLength;
+    setCurrentBanner(nextBanner);
+  }
 
   const getSlideStyleAsBackground = (slideIndex) => ({
-    backgroundImage: `url(${logement.pictures[slideIndex]})`,
-    width: `${1240}px`,
+    backgroundImage: `url(${housing.pictures[slideIndex]})`,
+    width: `${maxwidth}px`,
   });
   const widthRegardingLength = (childs) => ({
     width: `${childs * maxwidth}px`,
@@ -25,13 +42,13 @@ function Carousel(props) {
 
   return (
     <div className="carousel">
-      {logement ? (
+      {housing ? (
         <>
           <div className="banners" style={widthRegardingLength(picturesLength)}>
-            {logement.pictures.map((_, index) => (
+            {housing.pictures.map((_, index) => (
               <div
                 className="banner"
-                alt={logement.title}
+                alt={housing.title}
                 style={getSlideStyleAsBackground(index)}
                 key={index}
               ></div>
@@ -50,7 +67,7 @@ function Carousel(props) {
             className="right arrow"
             onClick={() => handleClick(1)}
           />
-          <span key={logement.id}>
+          <span key={housing.id}>
             {currentBanner + 1}/{picturesLength}
           </span>
         </>
@@ -61,4 +78,4 @@ function Carousel(props) {
   );
 }
 
-export default Carousel;
+export default Gallery;
