@@ -6,9 +6,9 @@ import {
   Outlet,
   Navigate,
 } from 'react-router-dom';
-import Header from './layouts/header';
-import Footer from './layouts/footer';
-import Home from '../pages/Home/home';
+import Header from './Header';
+import Footer from './Footer';
+import Home from '../pages/Home';
 import AboutUs from '../pages/AboutUs';
 import HousingPresentation from '../pages/HousingPresentation';
 import PageNotFound from '../pages/PageNotFound';
