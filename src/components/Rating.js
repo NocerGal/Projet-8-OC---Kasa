@@ -4,19 +4,11 @@ import redStarImage from '../assets/icons/red-star.svg';
 import greyStarImage from '../assets/icons/grey-star.svg';
 
 function fullFillRating(rating) {
-  const qtyStars = 5;
-  const emptyStars = qtyStars - rating;
-  const stars = [];
-
-  for (let i = 0; i < rating; i++) {
-    stars.push(<img key={i} src={redStarImage} alt="Star" />);
-  }
-
-  for (let i = 0; i < emptyStars; i++) {
-    stars.push(<img key={rating + i} src={greyStarImage} alt="Star" />);
-  }
-
-  return stars;
+  return [0, 1, 2, 3, 4].map((i) => {
+    return (
+      <img key={i} src={i < rating ? redStarImage : greyStarImage} alt="Star" />
+    );
+  });
 }
 
 function Rating(props) {
