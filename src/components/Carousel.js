@@ -5,16 +5,11 @@ import PageNotFound from '../pages/PageNotFound';
 import LeftArrow from '../assets/icons/left-arrow.png';
 import RightArrow from '../assets/icons/right-arrow.png';
 
-function handleClick(i) {
-  const nextBanner = (currentBanner + i + picturesLength) % picturesLength;
-  setCurrentBanner(nextBanner);
-}
-
 function Carousel(props) {
   const logements = props.logements;
   const maxwidth = props.maxwidth;
   const { id } = useParams();
-  const { logement, picturesLength, currentBanner } = useCarousel(
+  const { logement, picturesLength, currentBanner, handleClick } = useCarousel(
     logements,
     id
   );

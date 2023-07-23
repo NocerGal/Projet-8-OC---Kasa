@@ -22,9 +22,15 @@ export function useCarousel(logements, id) {
     return () => clearInterval(interval);
   }, [currentBanner, picturesLength]);
 
+  function handleClick(i) {
+    const nextBanner = (currentBanner + i + picturesLength) % picturesLength;
+    setCurrentBanner(nextBanner);
+  }
+
   return {
     logement,
     picturesLength,
     currentBanner,
+    handleClick,
   };
 }
