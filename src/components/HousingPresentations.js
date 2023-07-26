@@ -1,8 +1,8 @@
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import PageNotFOund from '../pages/PageNotFound';
-import Carousel from './Gallery';
-import Collapse from './Collapse';
+import Gallery from './Gallery';
+import CollapseDescription from './Collapse';
 import Rating from './Rating';
 
 function HousingPresentations(props) {
@@ -23,7 +23,7 @@ function HousingPresentations(props) {
     <main>
       {housing ? (
         <>
-          <Carousel housings={housings} maxwidth={maxwidth} />
+          <Gallery housings={housings} maxwidth={maxwidth} />
           <div className="descriptions">
             <div className="location-tags">
               <div className="location">
@@ -47,8 +47,20 @@ function HousingPresentations(props) {
             </div>
           </div>
           <div className="description-equipements">
-            <Collapse title="Description" description={housing.description} />
-            <Collapse title="Équipements" description={housing.equipments} />
+            <CollapseDescription
+              title="Description"
+              text={housing.description}
+            />
+            <CollapseDescription
+              title="Équipements"
+              text={
+                <ul>
+                  {Array.from(housing.equipments).map((equipement, i) => (
+                    <li key={i}>{equipement}</li>
+                  ))}
+                </ul>
+              }
+            />
           </div>
         </>
       ) : (

@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import topArrow from '../assets/icons/top-arrow.png';
 import { useState } from 'react';
 
-function Collapse(props) {
+function CollapseDescription(props) {
+  const text = props.text;
   const [opened, setOpened] = useState(false);
 
   return (
@@ -15,11 +16,9 @@ function Collapse(props) {
           className={opened ? 'bottom-arrow' : 'top-arrow'}
         />
       </div>
-      <div className={opened ? 'text display' : 'text hide'}>
-        <p>{props.description}</p>
-      </div>
+      <div className={opened ? 'text display' : 'text hide'}>{text}</div>
     </div>
   );
 }
 
-export default Collapse;
+export default CollapseDescription;
