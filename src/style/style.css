@@ -594,7 +594,7 @@ footer p {
 
 .description-equipements {
   max-width: 1240px;
-  margin: 0 auto 30px;
+  margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
   align-content: space-between;
@@ -604,7 +604,6 @@ footer p {
 .description-equipements .colapse-nav {
   flex-basis: 582px;
   min-width: 582px;
-  margin-bottom: 0;
 }
 @media only screen and (max-width: 564px) {
   .description-equipements .colapse-nav {
