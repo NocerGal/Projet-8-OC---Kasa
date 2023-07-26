@@ -49,7 +49,7 @@ function HousingPresentations(props) {
           <div className="description-equipements">
             <CollapseDescription
               title="Description"
-              text={housing.description}
+              text={<p>{housing.description}</p>}
             />
             <CollapseDescription
               title="Équipements"

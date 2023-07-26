@@ -9,16 +9,18 @@ function HousingsCards(props) {
 
   return (
     <div className="card-container">
-      {housings.map((housing) => (
-        <div
-          key={housing.id}
-          className="card-housing"
-          onClick={() => goToHousing(housing.id)}
-        >
-          <img src={housing.cover} alt={housing.title} />
-          <span>{housing.title}</span>
-        </div>
-      ))}
+      <div className="container">
+        {housings.map((housing) => (
+          <div
+            key={housing.id}
+            className="card-housing"
+            onClick={() => goToHousing(housing.id)}
+          >
+            <img src={housing.cover} alt={housing.title} />
+            <span>{housing.title}</span>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
