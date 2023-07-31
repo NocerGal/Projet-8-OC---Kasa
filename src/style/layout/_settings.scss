@@ -229,6 +229,7 @@ li {
   .details-title {
     display: flex;
     align-items: center;
+    cursor: pointer;
     justify-content: space-between;
     background-color: $red-salmon;
     padding: 10px 20px;
@@ -276,7 +277,7 @@ li {
     gap: 20px;
     grid-template-rows: 0fr;
     height: 0%;
-    min-height: 0px;
+    // min-height: 0px;
     transition: grid-template-rows 500ms ease-in-out,
       padding-top 500ms ease-in-out, padding-bottom 500ms ease-in-out,
       height 500ms ease-in-out, min-height 500ms ease-in-out;
@@ -303,7 +304,7 @@ li {
     padding-top: 18px;
     padding-bottom: 18px;
     height: 100%;
-    min-height: 140px;
+    // min-height: 140px;
     transition: grid-template-rows 500ms ease-in-out,
       padding-top 500ms ease-in-out, padding-bottom 500ms ease-in-out,
       min-height 500ms ease-in-out;
