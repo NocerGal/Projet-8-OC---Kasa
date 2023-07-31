@@ -170,6 +170,7 @@
   .colapse-nav {
     flex-basis: $width-collapse;
     min-width: $width-collapse;
+    // margin-bottom: 50px;
     @media only screen and (max-width: $mobile-width) {
       margin-bottom: 20px;
     }
