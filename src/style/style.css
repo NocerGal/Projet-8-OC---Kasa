@@ -257,6 +257,57 @@ li:hover {
   transition: grid-template-rows 500ms ease-in-out, padding-top 500ms ease-in-out, padding-bottom 500ms ease-in-out, min-height 500ms ease-in-out;
 }
 
+.error_404 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.error_404 .error {
+  color: #ff6060;
+  font-family: Montserrat, sans-serif;
+  font-weight: 700;
+  text-align: center;
+  font-size: 288px;
+  margin: 0;
+}
+@media only screen and (max-width: 564px) {
+  .error_404 .error {
+    font-size: 96px;
+  }
+}
+.error_404 h1 {
+  text-align: center;
+}
+@media only screen and (max-width: 564px) {
+  .error_404 h1 {
+    font-size: 18px;
+  }
+}
+.error_404 span {
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 18px;
+  color: #ff6060;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+}
+.error_404 h1,
+.error_404 span,
+.error_404 a,
+.error_404 .error {
+  margin: 0;
+  margin-bottom: 139px;
+}
+@media only screen and (max-width: 564px) {
+  .error_404 h1,
+  .error_404 span,
+  .error_404 a,
+  .error_404 .error {
+    margin-bottom: 113px;
+  }
+}
+
 header {
   display: flex;
   justify-content: space-between;
@@ -312,7 +363,6 @@ header nav ul li:hover {
 }
 
 main {
-  height: 100%;
   margin: 0 19px;
 }
 main .banner {
