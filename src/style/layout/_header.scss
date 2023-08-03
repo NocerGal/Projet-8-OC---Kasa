@@ -1,13 +1,20 @@
 header {
   @include header-flex;
-  max-width: $max-desktop-width;
-  min-width: $min-mobile-width;
   height: 68px;
-  margin: 45px auto;
+  margin: 45px 0;
   padding: 0 20px;
   @media only screen and (max-width: $mobile-width) {
     margin: 20px $margin-border 19px;
     padding: 0;
+  }
+
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: $max-desktop-width;
+    min-width: $min-mobile-width;
+    width: 100%;
+    margin: 0 auto;
   }
 
   img {

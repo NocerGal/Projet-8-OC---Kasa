@@ -5,21 +5,23 @@ import LOGO from '../assets/LOGO.svg';
 function Header() {
   return (
     <header>
-      <div>
-        <NavLink to="/">
-          <img id="Logo" src={LOGO} alt="logo de l'entreprise KASA" />
-        </NavLink>
-      </div>
-      <nav>
-        <ul>
+      <div className="header-container">
+        <div>
           <NavLink to="/">
-            <li>Accueil</li>
+            <img id="Logo" src={LOGO} alt="logo de l'entreprise KASA" />
           </NavLink>
-          <NavLink to="/a-propos">
-            <li>A propos</li>
-          </NavLink>
-        </ul>
-      </nav>
+        </div>
+        <nav>
+          <ul>
+            <NavLink to="/">
+              <li>Accueil</li>
+            </NavLink>
+            <NavLink to="/a-propos">
+              <li>A propos</li>
+            </NavLink>
+          </ul>
+        </nav>
+      </div>
     </header>
   );
 }

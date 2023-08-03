@@ -31,8 +31,8 @@ function HousingPresentations(props) {
                 <h2>{housing.location}</h2>
               </div>
               <div className="tags">
-                {housing.tags.map((tag) => (
-                  <span key={tag} className="tag">
+                {housing.tags.map((tag, i) => (
+                  <span key={i} className="tag">
                     {tag}
                   </span>
                 ))}

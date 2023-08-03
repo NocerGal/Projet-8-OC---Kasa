@@ -2,6 +2,25 @@
   font-family: "Montserrat";
   src: url(/src/style/fonts/Montserrat/Montserrat-VariableFont_wght.ttf);
 }
+html,
+body,
+#app {
+  height: 100%;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+footer {
+  flex-shrink: 0;
+}
+
 h1 {
   font-size: 36px;
   font-family: Montserrat, sans-serif;
@@ -312,10 +331,8 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1240px;
-  min-width: 335px;
   height: 68px;
-  margin: 45px auto;
+  margin: 45px 0;
   padding: 0 20px;
 }
 @media only screen and (max-width: 564px) {
@@ -323,6 +340,14 @@ header {
     margin: 20px 19px 19px;
     padding: 0;
   }
+}
+header .header-container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1240px;
+  min-width: 335px;
+  width: 100%;
+  margin: 0 auto;
 }
 header img {
   height: 68px;
@@ -446,9 +471,6 @@ footer {
 }
 @media only screen and (max-width: 564px) {
   footer {
-    position: absolute;
-    width: 100%;
-    height: 45%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -648,7 +670,6 @@ footer p {
   flex-wrap: wrap;
   align-content: space-between;
   justify-content: space-between;
-  height: 100%;
 }
 .description-equipements .colapse-nav {
   flex-basis: 582px;
